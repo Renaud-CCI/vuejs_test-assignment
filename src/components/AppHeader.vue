@@ -1,24 +1,26 @@
 <template>
 <div class="grid grid-cols-3 gap-4 items-center">
-  <div class="col-span-1 justify-start">
+
     <AppHeaderArrow />
-  </div>
-  <div class="col-span-1 justify-center flex items-center">
-    <img src="../assets/logo_highday.png" alt="highday logo" class="rounded-full w-1/2">
+
+  <div class="col-span-1 justify-center flex items-start">
+    <img src="../assets/logo_highday.png" alt="highday logo" class="rounded-full w-20 sm:w-1/4 my-1">
   </div>
   <div class="col-span-1 justify-end">
-    TEST
+    <AppHeaderAvatar />
   </div>
 </div>
 </template>
 
 <script>
 import AppHeaderArrow from './AppHeaderArrow.vue'
+import AppHeaderAvatar from './AppHeaderAvatar.vue';
 
 export default {
   name: 'AppHeader',
   components: {
-    AppHeaderArrow
+    AppHeaderArrow,
+    AppHeaderAvatar
   },
   props: {
     msg: String

@@ -2,8 +2,8 @@
   "id": 95,
   "avatar_url": "https://reqres.in/img/faces/3-image.jpg",
   "email": "emma.wong@reqres.in",
-  "first_name": "Jhon",
-  "last_name": "Mathew",
+  "first_name": "Emma",
+  "last_name": "Wong",
   "primary_color": "#0804db",
   "tasks": [
     {
@@ -14,12 +14,12 @@
       "title": "Mobile app design",
       "members": [
         {
-          "name": "Mike",
-          "avatar_url": "https://reqres.in/img/faces/3-image.jpg"
+          "name": "Gerges",
+          "avatar_url": "https://reqres.in/img/faces/1-image.jpg"
         },
         {
-          "name": "Anita",
-          "avatar_url": "https://reqres.in/img/faces/3-image.jpg"
+          "name": "Janet",
+          "avatar_url": "https://reqres.in/img/faces/2-image.jpg"
         }
       ]
     },
@@ -31,12 +31,12 @@
       "title": "Software Testing",
       "members": [
         {
-          "name": "Anita",
-          "avatar_url": "https://reqres.in/img/faces/3-image.jpg"
+          "name": "Janet",
+          "avatar_url": "https://reqres.in/img/faces/2-image.jpg"
         },
         {
-          "name": "David",
-          "avatar_url": "https://reqres.in/img/faces/3-image.jpg"
+          "name": "Charles",
+          "avatar_url": "https://reqres.in/img/faces/5-image.jpg"
         }
       ]
     }
