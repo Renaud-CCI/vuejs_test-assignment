@@ -1,5 +1,5 @@
 <template>
-  <img src="../assets/left-arrow.png" alt="left-arrow" class="w-1/4 h-auto"/>
+  <img src="../assets/left-arrow.png" alt="left-arrow" class="w-1/4 h-auto mx-auto"/>
 </template>
 
 <script>

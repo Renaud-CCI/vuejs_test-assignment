@@ -3,8 +3,8 @@
   <div class="col-span-1 justify-start">
     <AppHeaderArrow />
   </div>
-  <div class="col-span-1 justify-center text-red-500">
-    {{ msg }}
+  <div class="col-span-1 justify-center flex items-center">
+    <img src="../assets/logo_highday.png" alt="highday logo" class="rounded-full w-1/2">
   </div>
   <div class="col-span-1 justify-end">
     TEST
