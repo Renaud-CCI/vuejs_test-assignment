@@ -30,22 +30,20 @@ export default {
       arrowRightIcon: faArrowRight,
     };
   },
-  computed: {
-    days() {
-      if (!this.selectedMonth && !this.currentDate) {
-        return ["12", "13", "14", "15"];
-      }
+computed: {
+  days() {
+    const startDate = this.selectedMonth ? moment(this.selectedMonth) : moment(this.currentDate);
+    const days = [startDate.clone()];
 
-      const startDate = this.selectedMonth ? moment(this.selectedMonth).startOf('month') : moment(this.currentDate);
-      const days = [startDate.format('D')];
+    // Générer les trois prochains jours
+    for (let i = 1; i < 4; i++) {
+      const nextDay = startDate.clone().add(i, 'day');
+      days.push(nextDay);
+    }
 
-      // Générer les trois prochains jours
-      for (let i = 1; i < 4; i++) {
-        days.push(startDate.add(1, 'day').format('D'));
-      }
+    return days;
+  },
 
-      return days;
-    },
   },
   mounted(){
     console.log(this.selectedMonth);

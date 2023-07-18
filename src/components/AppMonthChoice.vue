@@ -50,7 +50,6 @@ export default {
     months() {
       const previousMonth = moment(this.currentDate).subtract(1, 'month');
       const nextMonth = moment(this.currentDate).add(1, 'month');
-      console.log('AppMonthChoice ', previousMonth, this.currentMonth, nextMonth); 
 
       return [previousMonth, this.currentMonth, nextMonth];
     },
@@ -58,7 +57,6 @@ export default {
   methods: {
     selectMonth(month) {
       this.currentDate = month;
-      console.log('selectMonth ', this.currentDate)
       this.$emit('month-selected', this.currentDate);
     },
   },
