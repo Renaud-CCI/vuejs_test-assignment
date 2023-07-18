@@ -2,12 +2,14 @@
   <AppHeader />
   <AppMonthChoice :current-date="currentDate" @month-selected="handleMonthSelected" />
   <MonthDate :selectedMonth="selectedMonth || currentDate" />
+  <AppCalendar />
 </template>
 
 <script>
 import AppHeader from './components/AppHeader.vue'
 import AppMonthChoice from './components/AppMonthChoice.vue'
 import MonthDate from './components/MonthDate.vue'
+import AppCalendar from './components/AppCalendar.vue'
 import moment from 'moment'
 
 export default {
@@ -16,6 +18,7 @@ export default {
     AppHeader,
     AppMonthChoice,
     MonthDate,
+    AppCalendar,
   },
   data() {
     return {
