@@ -1,21 +1,33 @@
 <template>
-  <AppHeader msg="Welcome to Your Vue.js App" />
-  <AppMonthChoice />
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <AppHeader />
+  <AppMonthChoice @month-selected="handleMonthSelected" />
+  <MonthDate :selectedMonth="selectedMonth || currentDate" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import AppHeader from './components/AppHeader.vue'
 import AppMonthChoice from './components/AppMonthChoice.vue'
+import MonthDate from './components/MonthDate.vue'
+import moment from 'moment'
 
 export default {
   name: 'App',
   components: {
     AppHeader,
     AppMonthChoice,
-    HelloWorld,
-  }
+    MonthDate,
+  },
+  data() {
+    return {
+      selectedMonth: null,
+      currentDate: moment("2022-02-12"),
+    };
+  },
+  methods: {
+    handleMonthSelected(month) {
+      this.selectedMonth = month;
+    },
+  },
 }
 </script>
 

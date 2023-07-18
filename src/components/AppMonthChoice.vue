@@ -17,7 +17,7 @@
         :icon="index === 0 ? arrowLeftIcon : arrowRightIcon"
         class="mr-1"
       />
-      {{ month }}
+      {{ month.format('MMM') }}
       <font-awesome-icon
         v-if="index === 2"
         :icon="index === 2 ? arrowRightIcon : arrowLeftIcon"
@@ -37,7 +37,7 @@ export default {
   name: 'AppMonthChoice',
   data() {
     return {
-      currentDate: moment("2022-02-12"),
+      currentDate: "2022-02-12",
       selectedMonth: null,
       arrowLeftIcon: faArrowLeft,
       arrowRightIcon: faArrowRight,
@@ -45,21 +45,24 @@ export default {
   },
   computed: {
     currentMonth() {
-      return this.currentDate.format('MMM');
+      return moment(this.currentDate);
     },
     months() {
-      const previousMonth = this.currentDate.clone().subtract(1, 'month').format('MMM');
-      const nextMonth = this.currentDate.clone().add(1, 'month').format('MMM');
+      const previousMonth = moment(this.currentDate).subtract(1, 'month');
+      const nextMonth = moment(this.currentDate).add(1, 'month');
+      console.log('AppMonthChoice ', previousMonth, this.currentMonth, nextMonth); 
+
       return [previousMonth, this.currentMonth, nextMonth];
     },
   },
   methods: {
     selectMonth(month) {
-      this.currentDate = moment().month(month);
-      this.selectedMonth = month;
-      this.$emit('month-selected', month);
+      this.currentDate = month;
+      console.log('selectMonth ', this.currentDate)
+      this.$emit('month-selected', this.currentDate);
     },
   },
+
 };
 </script>
 

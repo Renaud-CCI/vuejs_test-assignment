@@ -7,20 +7,20 @@
     <img src="../assets/logo_highday.png" alt="highday logo" class="rounded-full w-20 sm:w-1/4 my-1">
   </div>
   <div class="col-span-1 justify-end">
-    <AppHeaderAvatar />
+    <ProfilePicture />
   </div>
 </div>
 </template>
 
 <script>
 import AppHeaderArrow from './AppHeaderArrow.vue'
-import AppHeaderAvatar from './AppHeaderAvatar.vue';
+import ProfilePicture from './ProfilePicture.vue';
 
 export default {
   name: 'AppHeader',
   components: {
     AppHeaderArrow,
-    AppHeaderAvatar
+    ProfilePicture
   },
   props: {
     msg: String

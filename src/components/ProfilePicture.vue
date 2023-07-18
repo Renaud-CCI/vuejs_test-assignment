@@ -10,7 +10,7 @@
 import db from '@/json/db.json';
 
 export default {
-  name: 'AppHeaderAvatar',
+  name: 'ProfilePicture',
   data() {
     return {
       dbData: db,
