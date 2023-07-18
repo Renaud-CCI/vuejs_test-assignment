@@ -3,7 +3,13 @@
     <div class="flex justify-end">
       <font-awesome-icon :icon="arrowLeftIcon" class="clickable" @click="goToPreviousDay"/>
     </div>
-    <div v-for="day in days" :key="day" class="bg-white hover:bg-purple-800 text-purple-800 hover:text-white rounded-full h-20 w-14 sm:h-40 sm:w-32 mx-auto flex flex-col justify-center items-center">
+    <div v-for="day in days" :key="day" 
+    :class="[
+      'clickable border hover:border-purple-800 rounded-full h-20 w-14 sm:h-40 sm:w-32 mx-auto flex flex-col justify-center items-center',
+      { 'bg-purple-800 text-white': day.isSame(localSelectedDay, 'day') },
+      { 'bg-white text-purple-800': !day.isSame(localSelectedDay, 'day') },
+    ]"
+    @click="changeLocalSelectedDay(day)">
       <p class="text-xl font-bold">{{ day.format('D') }}</p>
       <p>{{ day.format('ddd') }}</p>
     </div>
@@ -37,11 +43,12 @@ export default {
       arrowLeftIcon: faArrowLeft,
       arrowRightIcon: faArrowRight,
       localSelectedMonth: null,
+      localSelectedDay:null,
     };
   },
   computed: {
     days() {
-console.log('currentDate : ', this.currentDate, 'selectedMonth : ', this.selectedMonth, 'localSelectedMonth : ', this.localSelectedMonth);
+console.log('currentDate : ', this.currentDate, 'selectedMonth : ', this.selectedMonth, 'localSelectedMonth : ', this.localSelectedMonth, 'localSelectedDay : ', this.localSelectedDay);
 
       const startDate = this.localSelectedMonth ? moment(this.localSelectedMonth) : this.selectedMonth ? moment(this.selectedMonth) : moment(this.currentDate);
       const days = [startDate.clone()];
@@ -63,12 +70,15 @@ console.log('currentDate : ', this.currentDate, 'selectedMonth : ', this.selecte
     },
     goToNextDay() {
       this.localSelectedMonth = this.localSelectedMonth ? this.localSelectedMonth.clone().add(1, 'day') : this.selectedMonth.clone().add(1, 'day');
+    },
+    changeLocalSelectedDay(day) {
+      this.localSelectedDay = day
     }
   },
   
 
   mounted(){
-    console.log(this.selectedMonth);
+    this.localSelectedDay = this.localSelectedMonth ? this.localSelectedMonth : this.selectedMonth;
   }
 };
 
