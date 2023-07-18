@@ -5,11 +5,10 @@
       :key="month"
       @click="selectMonth(month)"
       :class="{
-        'font-bold': month === currentMonth,
+        'font-bold text-xl': month === selectedMonth,
         'w-1/5': true,
         'text-right': index === 2,
         'text-left': index === 0,
-        'text-xl': true
       }"
     >
       <font-awesome-icon
@@ -35,29 +34,31 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   name: 'AppMonthChoice',
+  props: {
+    currentDate: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
-      currentDate: "2022-02-12",
-      selectedMonth: null,
+      selectedMonth: this.currentDate,
       arrowLeftIcon: faArrowLeft,
       arrowRightIcon: faArrowRight,
     };
   },
   computed: {
-    currentMonth() {
-      return moment(this.currentDate);
-    },
     months() {
-      const previousMonth = moment(this.currentDate).subtract(1, 'month');
-      const nextMonth = moment(this.currentDate).add(1, 'month');
+      const previousMonth = moment(this.selectedMonth).subtract(1, 'month');
+      const nextMonth = moment(this.selectedMonth).add(1, 'month');
 
-      return [previousMonth, this.currentMonth, nextMonth];
+      return [previousMonth, this.selectedMonth, nextMonth];
     },
   },
   methods: {
     selectMonth(month) {
-      this.currentDate = month;
-      this.$emit('month-selected', this.currentDate);
+      this.selectedMonth = month;
+      this.$emit('month-selected', this.selectedMonth);
     },
   },
 

@@ -1,6 +1,6 @@
 <template>
   <AppHeader />
-  <AppMonthChoice @month-selected="handleMonthSelected" />
+  <AppMonthChoice :current-date="currentDate" @month-selected="handleMonthSelected" />
   <MonthDate :selectedMonth="selectedMonth || currentDate" />
 </template>
 
