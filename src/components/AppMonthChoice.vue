@@ -7,8 +7,8 @@
       :class="{
         'font-bold text-xl': month === selectedMonth,
         'w-1/5': true,
-        'text-right': index === 2,
-        'text-left': index === 0,
+        'text-right cursor-pointer': index === 2,
+        'text-left cursor-pointer': index === 0,
       }"
     >
       <font-awesome-icon
@@ -66,7 +66,5 @@ export default {
 </script>
 
 <style scoped>
-p {
-  cursor: pointer;
-}
+
 </style>

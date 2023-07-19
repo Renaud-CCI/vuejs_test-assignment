@@ -1,6 +1,6 @@
 <template>
   <p class="text-2xl font-bold flex justify-start mx-8 mt-6">OnGoing</p>
-<div class="grid grid-cols-4 gap-4">
+<div class="grid grid-cols-4">
   <div class="col-span-1">
     <CalendarHours />
   </div>

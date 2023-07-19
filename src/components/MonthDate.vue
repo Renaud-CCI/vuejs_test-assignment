@@ -1,11 +1,11 @@
 <template>
 <div class="grid grid-cols-6 gap-3 items-center">
     <div class="flex justify-end">
-      <font-awesome-icon :icon="arrowLeftIcon" class="clickable" @click="goToPreviousDay"/>
+      <font-awesome-icon :icon="arrowLeftIcon" class="cursor-pointer" @click="goToPreviousDay"/>
     </div>
     <div v-for="day in days" :key="day" 
     :class="[
-      'clickable border hover:border-purple-800 rounded-full h-20 w-14 sm:h-40 sm:w-32 mx-auto flex flex-col justify-center items-center',
+      'cursor-pointer border hover:border-purple-800 rounded-full h-20 w-14 sm:h-40 sm:w-32 mx-auto flex flex-col justify-center items-center',
       { 'bg-purple-800 text-white': day.isSame(localSelectedDay, 'day') },
       { 'bg-white text-purple-800': !day.isSame(localSelectedDay, 'day') },
     ]"
@@ -14,7 +14,7 @@
       <p>{{ day.format('ddd') }}</p>
     </div>
     <div class="flex justify-start">
-      <font-awesome-icon :icon="arrowRightIcon" class="clickable" @click="goToNextDay"/>
+      <font-awesome-icon :icon="arrowRightIcon" class="cursor-pointer" @click="goToNextDay"/>
     </div>
 </div>
 </template>
@@ -86,7 +86,5 @@ console.log('currentDate : ', this.currentDate, 'selectedMonth : ', this.selecte
 </script>
 
 <style scoped>
-.clickable {
-  cursor: pointer;
-}
+
 </style>
