@@ -3,6 +3,7 @@
   <AppMonthChoice :current-date="currentDate" @month-selected="handleMonthSelected" />
   <MonthDate :selectedMonth="selectedMonth || currentDate" />
   <AppCalendar />
+  <div class="endingDiv"></div>
 </template>
 
 <script>
@@ -42,5 +43,16 @@ export default {
   text-align: center;
   color: #2c3e50;
   background-color: #DBE9F6;
+}
+
+.endingDiv{
+  position: fixed;
+  z-index: -10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #DBE9F6;
+  overflow-y: hidden;
 }
 </style>
