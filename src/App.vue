@@ -1,8 +1,8 @@
 <template>
   <AppHeader />
-  <AppMonthChoice :current-date="currentDate" @month-selected="handleMonthSelected" />
-  <MonthDate :selectedMonth="selectedMonth || currentDate" />
-  <AppCalendar />
+  <AppMonthChoice :current-date="currentDate" @month-selected="handleMonthSelected" :local-selected-day="localSelectedDay" />
+  <MonthDate :selectedMonth="selectedMonth || currentDate" :local-selected-day="localSelectedDay" @local-selected-day-changed="updateLocalSelectedDay" />
+  <AppCalendar :local-selected-day="localSelectedDay || currentDate" />
   <div class="endingDiv"></div>
 </template>
 
@@ -25,11 +25,15 @@ export default {
     return {
       selectedMonth: null,
       currentDate: moment("2022-02-12"),
+      localSelectedDay:null,
     };
   },
   methods: {
     handleMonthSelected(month) {
       this.selectedMonth = month;
+    },
+    updateLocalSelectedDay(day) {
+      this.localSelectedDay = day;
     },
   },
 }

@@ -39,10 +39,14 @@ export default {
       type: Object,
       required: true,
     },
+    localSelectedDay: {
+      type: moment, // Assurez-vous d'importer moment dans le composant
+      default: null,
+    },
   },
   data() {
     return {
-      selectedMonth: this.currentDate,
+      selectedMonth: this.localSelectedDay? this.localSelectedDay : this.currentDate,
       arrowLeftIcon: faArrowLeft,
       arrowRightIcon: faArrowRight,
     };

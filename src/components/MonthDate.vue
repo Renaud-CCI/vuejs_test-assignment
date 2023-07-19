@@ -72,7 +72,8 @@ console.log('currentDate : ', this.currentDate, 'selectedMonth : ', this.selecte
       this.localSelectedMonth = this.localSelectedMonth ? this.localSelectedMonth.clone().add(1, 'day') : this.selectedMonth.clone().add(1, 'day');
     },
     changeLocalSelectedDay(day) {
-      this.localSelectedDay = day
+      this.localSelectedDay = day;
+        this.$emit('local-selected-day-changed', day);
     }
   },
   

@@ -6,7 +6,7 @@
         <CalendarHours />
       </div>
       <div class="col-span-3">
-        <CalendarGrid />
+        <CalendarGrid :selected-day="localSelectedDay"/>
       </div>
     </div>
     </section>
@@ -17,10 +17,17 @@
 <script>
 import CalendarGrid from './CalendarGrid.vue'
 import CalendarHours from './CalendarHours.vue'
+import moment from 'moment'
 
 
 export default {
   name: 'AppCalendar',
+  props: {
+    localSelectedDay: {
+      type: moment, // Assurez-vous d'importer moment dans le composant
+      default: null,
+    },
+  },
   components: {
     CalendarGrid,
     CalendarHours

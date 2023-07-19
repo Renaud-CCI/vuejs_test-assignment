@@ -2,20 +2,29 @@
   <div class="grid grid-rows-96 gap-0 relative" style="grid-template-rows: repeat(96, 16px);">
     <div v-for="hour in 96" :key="hour" :class="((hour-1)%4==0 || hour==0) ? 'border-t-2 border-gray-300 row-span-1' : 'row-span-1'">
     </div>
-    <div :style="`top: ${ startTimeInFloat * 64 }px; height: ${(endTimeInFloat - startTimeInFloat) * 64}px`" class="absolute left-2 bg-green-500">Test 10h-11h20</div>
+    <div :style="`top: ${ startTimeInFloat * 64 }px; height: ${(endTimeInFloat - startTimeInFloat) * 64}px`" class="absolute left-1/2 bg-purple-700 text-white w-4/5 rounded-md transform -translate-x-1/2">
+    Test 10h-11h20 {{selectedDay.format('MMM')}}
+    </div>
   </div>
 </template>
 
 <script>
 import db from '@/json/db.json';
+import moment from 'moment';
 
 export default {
   name: 'CalendarGrid',
+  props: {
+    selectedDay: {
+      type: moment, // Assurez-vous d'importer moment dans le composant
+      default: null,
+    },
+  },
   data() {
     return {
       dbData: [],
       startTimeInFloat:null,
-      endTimeInFloat:null 
+      endTimeInFloat:null,
     };
   },
   created() {
