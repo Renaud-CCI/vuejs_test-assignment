@@ -9,9 +9,9 @@
     {
       "id": 1,
       "date": "12/02/2022",
-      "start-time": "09:15",
-      "end-time": "10:00",
-      "title": "Mobile app design",
+      "start-time": "09:00",
+      "end-time": "10:15",
+      "title": "Mobile app design #1",
       "members": [
         {
           "name": "Gerges",
@@ -26,8 +26,8 @@
     {
       "id": 2,
       "date": "12/02/2022",
-      "start-time": "10:00",
-      "end-time": "11:20",
+      "start-time": "10:30",
+      "end-time": "11:50",
       "title": "Software Testing",
       "members": [
         {
@@ -37,6 +37,44 @@
         {
           "name": "Charles",
           "avatar_url": "https://reqres.in/img/faces/5-image.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "date": "13/02/2022",
+      "start-time": "09:00",
+      "end-time": "10:15",
+      "title": "Mobile app design #2",
+      "members": [
+        {
+          "name": "Gerges",
+          "avatar_url": "https://reqres.in/img/faces/1-image.jpg"
+        },
+        {
+          "name": "Janet",
+          "avatar_url": "https://reqres.in/img/faces/2-image.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "date": "13/02/2022",
+      "start-time": "13:00",
+      "end-time": "17:00",
+      "title": "Deployment",
+      "members": [
+        {
+          "name": "Gerges",
+          "avatar_url": "https://reqres.in/img/faces/1-image.jpg"
+        },
+        {
+          "name": "Charles",
+          "avatar_url": "https://reqres.in/img/faces/5-image.jpg"
+        },
+        {
+          "name": "Janet",
+          "avatar_url": "https://reqres.in/img/faces/2-image.jpg"
         }
       ]
     }

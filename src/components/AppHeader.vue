@@ -4,7 +4,7 @@
     <AppHeaderArrow />
 
   <div class="col-span-1 justify-center flex items-start">
-    <img src="../assets/logo_highday.png" alt="highday logo" class="rounded-full w-20 sm:w-1/4 my-1">
+    <img src="../assets/logo_highday_transp.png" alt="highday logo" class="rounded-full w-20 sm:w-1/4 my-1 border-2 border-purple-500">
   </div>
   <div class="col-span-1 justify-end">
     <ProfilePicture />
