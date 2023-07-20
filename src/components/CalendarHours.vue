@@ -1,7 +1,7 @@
 <template>
-  <div class="grid grid-rows-96 gap-0" style="grid-template-rows: repeat(96, 16px);">
-    <div v-for="hour in 96" :key="hour" :class="((hour-1)%4==0 || hour==0) ? 'border-t-2 border-gray-300 row-span-1' : 'row-span-1'">
-      {{ (hour-1)%4==0 || hour==0 ? hourToTime(hour) : '' }}
+  <div class="grid grid-rows-24 gap-0" style="grid-template-rows: repeat(24, 60px);">
+    <div v-for="hour in 24" :key="hour" class="border-t-2 border-gray-300 row-span-1 flex justify-center">
+      <p class="hourParagraph">{{ hour + ':00'}}</p>
     </div>
   </div>
 </template>
@@ -17,12 +17,6 @@ export default {
     
   },  
   methods:{
-    hourToTime(hour) {
-      let testHour = hour-1;
-      const hourStart = Math.floor(testHour / 4);
-      const minutes = (testHour % 4) * 15;
-      return `${hourStart.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
-    },
   }
 };
 
@@ -30,5 +24,9 @@ export default {
 </script>
 
 <style scoped>
-
+.hourParagraph{
+  margin:-12px;
+  width: fit-content;
+  background-color: #DBE9F6;
+}
 </style>

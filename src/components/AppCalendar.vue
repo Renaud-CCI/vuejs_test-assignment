@@ -1,5 +1,5 @@
 <template>
-  <p class="text-2xl font-bold flex justify-start mx-8 mt-6">OnGoing</p>
+  <p class="text-2xl font-bold flex justify-start mx-8 mt-6">Ongoing</p>
   <section id="calendar" ref="calendarSection">
     <div class="grid grid-cols-6">
       <div class="col-span-1">
