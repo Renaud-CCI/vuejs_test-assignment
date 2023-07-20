@@ -1,5 +1,6 @@
 <template>
   <div class="flex items-center justify-center space-x-4 my-5">
+  <!-- Adding three month with arrows and cursor-pointer for the first and the last -->
     <p
       v-for="(month, index) in months"
       :key="month"
@@ -52,6 +53,7 @@ export default {
     };
   },
   computed: {
+    // Construct the months before and after the selected month
     months() {
       const previousMonth = moment(this.selectedMonth).subtract(1, 'month');
       const nextMonth = moment(this.selectedMonth).add(1, 'month');
@@ -60,6 +62,7 @@ export default {
     },
   },
   methods: {
+    // Reassign the variable and emit it
     selectMonth(month) {
       this.selectedMonth = month;
       this.$emit('month-selected', this.selectedMonth);

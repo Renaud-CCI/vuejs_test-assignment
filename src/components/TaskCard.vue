@@ -36,6 +36,7 @@ export default {
     };
   },
   computed: {
+    // verify if there's some meets for the selected day
     filteredTasks() {
       return this.dbData.filter(task =>
         moment(task.date, "DD/MM/YYYY").isSame(this.selectedDay, 'day')
@@ -43,10 +44,12 @@ export default {
     },
   },
   methods: {
+    // transform time of the object 'moment' on a float to adapt position and height of the card
     timeInFloat(time) {
       let [hour, minute] = time.split(':');
       return (parseInt(hour) + parseInt(minute) / 60).toFixed(2);
     },
+    // Return position and height of the card in relation with the task schedules
     getTaskStyle(task) {
       const startTime = this.timeInFloat(task['start-time']);
       const endTime = this.timeInFloat(task['end-time']);
@@ -55,6 +58,7 @@ export default {
         height: `${(endTime - startTime) * 60}px`,
       };
     },
+    // Create a string list of members separated by a comma
     getMembersString(members) {
       return members.map(member => member.name).join(", ");
     },
