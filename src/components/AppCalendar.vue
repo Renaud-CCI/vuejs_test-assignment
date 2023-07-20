@@ -7,7 +7,7 @@
         <CalendarHours />
       </div>
       <div class="col-span-5">
-        <CalendarGrid :selected-day="localSelectedDay"/>
+        <CalendarGrid :selected-day="localSelectedDay" :jsonData="jsonData"/>
       </div>
     </div>
     </section>
@@ -19,7 +19,6 @@
 import CalendarGrid from './CalendarGrid.vue'
 import CalendarHours from './CalendarHours.vue'
 import moment from 'moment'
-import axios from 'axios'
 
 
 export default {
@@ -29,11 +28,10 @@ export default {
       type: moment,
       default: null,
     },
-  },
-  data(){
-    return{
-      jsonData : null,
-    }
+    jsonData: {
+      type: Object,
+      required: true,
+    },
   },
   components: {
     CalendarGrid,
@@ -41,10 +39,7 @@ export default {
   }, 
   mounted() {
     this.$refs.calendarSection.scrollTop = 510
-    axios
-      .get('/api/testAssigmentJson', { proxy: { host: 'https://my-json-server.typicode.com/Renaud-CCI/test-assignment-json', port: 8080 } })
-      .then(response => (this.jsonData = response))
-  } 
+  }
 };
 
 

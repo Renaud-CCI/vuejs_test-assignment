@@ -27,6 +27,10 @@ export default {
       type: moment,
       default: null,
     },
+    jsonData: {
+      type: Object,
+      required: true,
+    },
   },
   data() {
     return {
@@ -66,6 +70,10 @@ export default {
   created() {
     this.dbData = db.tasks;
   },
+  // mounted() {
+
+  //   console.log(this.jsonData);
+  // }
 };
 </script>
 

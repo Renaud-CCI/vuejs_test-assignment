@@ -1,8 +1,8 @@
 <template>
-  <AppHeader />
+  <AppHeader :jsonData="jsonData"/>
   <AppMonthChoice :current-date="currentDate" @month-selected="handleMonthSelected" :local-selected-day="localSelectedDay" />
   <MonthDate :selectedMonth="selectedMonth || currentDate" :local-selected-day="localSelectedDay" @local-selected-day-changed="updateLocalSelectedDay" />
-  <AppCalendar :local-selected-day="localSelectedDay || currentDate" />
+  <AppCalendar :local-selected-day="localSelectedDay || currentDate" :jsonData="jsonData"/>
   <!-- Add a div to have a backgroud until the end of the screen-->
   <div class="endingDiv"></div>
 </template>
@@ -13,6 +13,8 @@ import AppMonthChoice from './components/AppMonthChoice.vue'
 import MonthDate from './components/MonthDate.vue'
 import AppCalendar from './components/AppCalendar.vue'
 import moment from 'moment'
+import axios from 'axios'
+
 
 export default {
   name: 'App',
@@ -27,6 +29,7 @@ export default {
       selectedMonth: null,
       currentDate: moment("2022-02-12"),
       localSelectedDay:null,
+      jsonData: {},
     };
   },
   methods: {
@@ -37,6 +40,12 @@ export default {
       this.localSelectedDay = day;
     },
   },
+  mounted() {
+    axios
+      .get('https://my-json-server.typicode.com/Renaud-CCI/testAssigmentJson/data')
+      .then(response => (this.jsonData=response.data));
+  },
+
 }
 </script>
 

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'AppHeaderArrow',
+  name: 'HeaderArrow',
   
 }
 </script>
