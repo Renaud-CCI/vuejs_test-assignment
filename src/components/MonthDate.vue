@@ -48,8 +48,6 @@ export default {
   },
   computed: {
     days() {
-console.log('currentDate : ', this.currentDate, 'selectedMonth : ', this.selectedMonth, 'localSelectedMonth : ', this.localSelectedMonth, 'localSelectedDay : ', this.localSelectedDay);
-
       const startDate = this.localSelectedMonth ? moment(this.localSelectedMonth) : this.selectedMonth ? moment(this.selectedMonth) : moment(this.currentDate);
       const days = [startDate.clone()];
 

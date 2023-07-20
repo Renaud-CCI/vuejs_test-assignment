@@ -45,4 +45,5 @@ export default {
   height: 50vh;
   overflow-y: auto;
 }
+#calendar::-webkit-scrollbar { width: 0 !important };
 </style>
