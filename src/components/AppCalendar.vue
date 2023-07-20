@@ -33,7 +33,7 @@ export default {
     CalendarHours
   }, 
    mounted() {
-    this.$refs.calendarSection.scrollTop = 550;
+    this.$refs.calendarSection.scrollTop = 510;
   } 
 };
 

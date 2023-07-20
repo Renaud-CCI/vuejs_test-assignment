@@ -51,8 +51,8 @@ export default {
       const startTime = this.timeInFloat(task['start-time']);
       const endTime = this.timeInFloat(task['end-time']);
       return {
-        top: `${startTime * 64}px`,
-        height: `${(endTime - startTime) * 64}px`,
+        top: `${startTime * 60}px`,
+        height: `${(endTime - startTime) * 60}px`,
       };
     },
     getMembersString(members) {
