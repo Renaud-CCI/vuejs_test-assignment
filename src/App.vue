@@ -41,6 +41,7 @@ export default {
     },
   },
   mounted() {
+    //call the API
     axios
       .get('https://my-json-server.typicode.com/Renaud-CCI/testAssigmentJson/data')
       .then(response => (this.jsonData=response.data));
