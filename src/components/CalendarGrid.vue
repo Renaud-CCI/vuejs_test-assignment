@@ -4,7 +4,7 @@
     <div v-for="hour in 24" :key="hour" class="border-t-2 border-gray-300 row-span-1">
     </div>
     <!-- Place for absolutes TaskCards -->
-    <TaskCard :selected-day="selectedDay" :jsonData="jsonData"/>
+    <TaskCard :selected-day="selectedDay"/>
   </div>
 </template>
 
@@ -18,10 +18,6 @@ export default {
     selectedDay: {
       type: moment,
       default: null,
-    },
-    jsonData: {
-      type: Object,
-      required: true,
     },
   },
   components: {

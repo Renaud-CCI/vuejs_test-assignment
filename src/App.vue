@@ -2,7 +2,7 @@
   <AppHeader :jsonData="jsonData"/>
   <AppMonthChoice :current-date="currentDate" @month-selected="handleMonthSelected" :local-selected-day="localSelectedDay" />
   <MonthDate :selectedMonth="selectedMonth || currentDate" :local-selected-day="localSelectedDay" @local-selected-day-changed="updateLocalSelectedDay" />
-  <AppCalendar :local-selected-day="localSelectedDay || currentDate" :jsonData="jsonData"/>
+  <AppCalendar :local-selected-day="localSelectedDay || currentDate"/>
   <!-- Add a div to have a backgroud until the end of the screen-->
   <div class="endingDiv"></div>
 </template>

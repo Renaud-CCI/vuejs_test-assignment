@@ -7,7 +7,7 @@
         <CalendarHours />
       </div>
       <div class="col-span-5">
-        <CalendarGrid :selected-day="localSelectedDay" :jsonData="jsonData"/>
+        <CalendarGrid :selected-day="localSelectedDay"/>
       </div>
     </div>
     </section>
@@ -27,10 +27,6 @@ export default {
     localSelectedDay: {
       type: moment,
       default: null,
-    },
-    jsonData: {
-      type: Object,
-      required: true,
     },
   },
   components: {

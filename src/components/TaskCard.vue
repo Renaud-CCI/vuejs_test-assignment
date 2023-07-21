@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import db from '@/json/db.json';
 import moment from 'moment';
+import axios from 'axios';
 
 export default {
   name: 'CalendarGrid',
@@ -27,14 +27,10 @@ export default {
       type: moment,
       default: null,
     },
-    jsonData: {
-      type: Object,
-      required: true,
-    },
   },
   data() {
     return {
-      dbData: [],
+      jsonData: [],
       startTimeInFloat: null,
       endTimeInFloat: null,
     };
@@ -42,7 +38,7 @@ export default {
   computed: {
     // verify if there's some meets for the selected day
     filteredTasks() {
-      return this.dbData.filter(task =>
+      return this.jsonData.filter(task =>
         moment(task.date, "DD/MM/YYYY").isSame(this.selectedDay, 'day')
       );
     },
@@ -67,13 +63,11 @@ export default {
       return members.map(member => member.name).join(", ");
     },
   },
-  created() {
-    this.dbData = db.tasks;
-  },
-  // mounted() {
-
-  //   console.log(this.jsonData);
-  // }
+  mounted() {
+    axios
+      .get('https://my-json-server.typicode.com/Renaud-CCI/testAssigmentJson/data')
+      .then(response => (this.jsonData=response.data.tasks));
+  }
 };
 </script>
 
